@@ -1,0 +1,517 @@
+/* Thiết lập các thuộc tính cơ bản cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif; /* Chọn font chữ */
+    margin: 0; /* Bỏ margin mặc định của trình duyệt */
+    padding: 0; /* Bỏ padding mặc định của trình duyệt */
+    background-color: #f4f4f4; /* Màu nền cho toàn bộ trang */
+    color: #333; /* Màu chữ mặc định */
+    line-height: 1.6; /* Chiều cao dòng */
+}
+
+/* Thiết lập các thuộc tính cơ bản cho toàn bộ trang */
+html, body {
+    height: 100%; /* Đảm bảo html và body chiếm toàn bộ chiều cao */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Chọn font chữ */
+    background-color: #f4f4f4; /* Màu nền cho toàn bộ trang */
+    color: #333; /* Màu chữ mặc định */
+    line-height: 1.6; /* Chiều cao dòng */
+    display: flex;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+/* Kiểu cho phần tiêu đề (header) */
+header {
+    background-color: #2c3e50; /* Màu nền đậm hơn */
+    color: #fff;
+    padding: 0;
+    text-align: center;
+    height: 180px; /* Tăng chiều cao header */
+    position: relative; /* Giữ position relative để login-area có thể absolute */
+    /* Loại bỏ overflow: hidden để banner hiển thị đầy đủ */
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    /* Loại bỏ position: absolute và z-index để banner hiển thị bình thường */
+}
+
+.banner img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng */
+    height: auto; /* Đảm bảo hình ảnh hiển thị đầy đủ theo tỷ lệ */
+    max-height: 180px; /* Giới hạn chiều cao tối đa bằng chiều cao header */
+    object-fit: cover; /* Cắt ảnh để vừa với khung mà không bị méo */
+    display: block; /* Loại bỏ khoảng trắng dưới ảnh */
+}
+
+.login-area {
+    position: absolute;
+    top: 10px; /* Điều chỉnh vị trí theo ý muốn */
+    right: 20px; /* Điều chỉnh vị trí theo ý muốn */
+    z-index: 1; /* Đặt nút đăng nhập ở lớp trên */
+}
+
+.login-area button {
+    background-color: #28a745; /* Màu xanh lá cây */
+    color: white;
+    padding: 12px 25px; /* Tăng padding */
+    border: none;
+    border-radius: 25px; /* Bo tròn nút */
+    cursor: pointer;
+    font-size: 1.1rem; /* Tăng kích thước chữ */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm transition */
+}
+
+.login-area button:hover {
+    background-color: #218838; /* Màu xanh lá cây đậm hơn khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+/* Modal (popup) styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top, cao hơn các phần tử khác */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    border-radius: 8px;
+    position: relative;
+    color: #333;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.modal-content button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.modal-content button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+/* Kiểu cho phần nội dung chính (main) */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    flex-grow: 1; /* Cho phép main-container mở rộng để chiếm không gian còn lại */
+    margin: 0 auto; /* Căn giữa */
+    background-color: #eef2f7; /* Màu nền nhạt hơn */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ hơn */
+    border-radius: 12px; /* Bo góc nhiều hơn */
+    box-sizing: border-box;
+}
+
+.left-sidebar, .right-sidebar {
+    flex: 2;
+    padding: 20px; /* Tăng padding */
+    background-color: #ffffff; /* Nền trắng */
+    border-radius: 10px; /* Bo góc nhiều hơn */
+    margin-right: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Đổ bóng nhẹ */
+}
+
+.right-sidebar {
+    margin-right: 0; /* Cột phải không có margin bên phải */
+    margin-left: 20px; /* Khoảng cách giữa các cột */
+}
+
+.main-center {
+    flex: 6; /* Cột giữa chiếm 6 phần */
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px; /* Bo góc nhiều hơn */
+    border: 1px solid #ddd; /* Viền rõ hơn */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); /* Đổ bóng nhẹ */
+}
+
+.left-sidebar h2, .main-center h2, .right-sidebar h3 {
+    color: #FF5733; /* Màu cam nổi bật */
+    border-bottom: 2px solid #0056b3; /* Đường viền đậm hơn */
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Chữ hoa */
+    letter-spacing: 1px; /* Khoảng cách chữ */
+}
+
+.left-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.left-sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 10px; /* Tăng padding để dễ click hơn */
+    border-radius: 4px; /* Bo góc nhẹ */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Thêm transition cho hiệu ứng mượt mà */
+}
+
+.left-sidebar ul li a:hover {
+    color: #fff; /* Màu chữ trắng khi hover */
+    background-color: #007bff; /* Màu nền xanh khi hover */
+    transform: translateX(5px); /* Dịch chuyển sang phải 5px */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Thêm đổ bóng */
+}
+
+.left-sidebar ul ul { /* Sub-menu for nested lists */
+    margin-left: 15px;
+    border-left: 2px solid #eee;
+    padding-left: 10px;
+    margin-top: 5px;
+    display: none; /* Ẩn mặc định */
+}
+
+.dropdown-toggle .arrow {
+    float: right;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-toggle .arrow.rotate {
+    transform: rotate(90deg);
+}
+
+.search-area {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-area input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-area button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-area button:hover {
+    background-color: #0056b3;
+}
+
+.group-notifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.group-notifications ul li {
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Thêm transition */
+}
+
+.group-notifications ul li:hover {
+    background-color: #d0e9ff; /* Màu nền nhạt hơn khi hover */
+    transform: translateY(-3px); /* Nổi lên một chút */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng mạnh hơn */
+}
+
+.group-notifications ul li a {
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: inherit; /* Giữ màu chữ mặc định của li */
+}
+
+.group-notifications ul li a:hover {
+    text-decoration: underline; /* Thêm gạch chân khi di chuột qua nếu muốn */
+}
+
+.calendar-area {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Kiểu cho phần chân trang (footer) */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 20px; /* Thêm margin-top để tạo khoảng cách với main content */
+}
+
+/* Calendar styles */
+#calendar {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+#calendar header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2em;
+    height: auto; /* Override previous header height */
+    position: relative; /* Ensure buttons are positioned correctly */
+}
+
+#calendar header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+#calendar header button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+#calendar .days-of-week, #calendar .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+}
+
+#calendar .days-of-week {
+    background-color: #e9ecef;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+#calendar .day-name {
+    padding: 5px 0;
+}
+
+#calendar .calendar-grid {
+    padding: 10px;
+}
+
+#calendar .calendar-day {
+    padding: 10px 5px;
+    border: 1px solid #eee;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#calendar .calendar-day:hover:not(.empty):not(.current-day) {
+    background-color: #f0f0f0;
+}
+
+#calendar .calendar-day.empty {
+    background-color: #f9f9f9;
+    color: #ccc;
+    cursor: default;
+}
+
+#calendar .calendar-day.current-day {
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+/* Style cho mục menu đang hoạt động */
+.left-sidebar ul li a.active {
+    background-color: #0056b3; /* Màu nền đậm hơn khi active */
+    color: #fff; /* Màu chữ trắng */
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3); /* Đổ bóng mạnh hơn */
+    transform: translateX(5px); /* Dịch chuyển sang phải */
+}
+
+/* Style cho phần liên hệ mới */
+.contact-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    text-align: left;
+}
+
+.contact-info h3 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the flow chart content */
+.flow-chart-content {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+.flow-chart-content h3 {
+    color: #FF5733; /* Màu cam nổi bật */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+}
+
+.flow-chart-content p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.flow-step {
+    background-color: #e0f7fa;
+    border: 1px solid #00bcd4;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flow-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 188, 212, 0.3);
+}
+
+.flow-step h4 {
+    color: #8A2BE2; /* Màu tím nổi bật */
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.flow-step p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.flow-arrow {
+    text-align: center;
+    font-size: 2em;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.flow-chart-content .note {
+    font-size: 0.9em;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style cho banner trong sidebar */
+.sidebar-banner {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.sidebar-banner img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message {
+    color: #0000FF !important; /* Màu xanh dương */
+    text-align: center; /* Căn giữa */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+}

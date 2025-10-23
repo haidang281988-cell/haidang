@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo công việc hàng tuần của nhóm Operation 2</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            color: #0056b3;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #0056b3;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        .highlight {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .meeting-details {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .meeting-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .meeting-details th, .meeting-details td {
+            padding: 10px 15px;
+            border: 1px solid #eee;
+            text-align: left;
+            color: #000; /* Đảm bảo màu chữ đen để dễ nhìn */
+        }
+        .meeting-details th {
+            background-color: #f8f8f8;
+            width: 150px;
+            font-weight: bold;
+        }
+        .progress-bar-container {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 20px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #28a745;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Báo cáo công việc hàng tuần của nhóm Operation 2</h1>
+                    </header>
+
+        <section id="introduction">
+            <h2>Giới Thiệu</h2>
+            <p>Chào mừng quý vị đến với báo cáo tổng quan về tiến độ công việc và thống kê phép năm của nhóm. Báo cáo này được xây dựng nhằm cung cấp cái nhìn toàn diện về hiệu suất làm việc cũng như tình hình sử dụng phép năm , giờ công của các thành viên, hỗ trợ việc các thành viên đưa ra quyết định và tối ưu hóa công việc.</p>
+            
+            <div class="meeting-details">
+                <table>
+                    <tr>
+                        <th>Chủ đề</th>
+                        <td>Hardware team work progress</td>
+                        <th>Thời gian</th>
+                        <td>2025/10/25 - 07:30~8:30</td>
+                    </tr>
+                    <tr>
+                        <th>Chủ trì</th>
+                        <td>Trương Khánh Hảo</td>
+                        <th>Thư ký</th>
+                        <td>Đặng Chí Hải</td>
+                    </tr>
+                    <tr>
+                        <th>Địa điểm</th>
+                        <td>A2-3F Meeting Room 3</td>
+                        <th></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Người tham dự</th>
+                        <td colspan="3">Đinh Thanh Thế, Đặng Chí Hải, Đặng Ngọc Duy, Nguyễn Quốc Huy, Trịnh Cẩm Khôn, Ngô Trương Thế Ngọc</td>
+                    </tr>
+                    <tr>
+                        <th>Người vắng mặt</th>
+                        <td colspan="3"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="highlight">
+                <h3>Mục tiêu của cuộc họp:</h3>
+                <ul>
+                    <li>Đánh giá tiến độ các dự án và nhiệm vụ.</li>
+                    <li>Phân tích hiệu suất làm việc của nhóm.</li>
+                    <li>Tổng hợp và phân tích dữ liệu phép năm.</li>
+                    <li>Đề xuất của các thành viên để cải thiện công việc được tốt hơn (nếu có).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="work-progress">
+            <h2>Tiến Độ Công Việc</h2>
+            <p>Phần này sẽ trình bày chi tiết về các dự án đang triển khai, tiến độ đạt được, các thách thức và kế hoạch tiếp theo.</p>
+            <h3>I. Giám sát Dashboards Grafana</h3>
+            <ul>
+                <li>
+                    <p>Máy tính chưa hồi báo OCS quá 30 ngày</p>
+                    <a href="https://twit-dashboard.pouchen.com/d/c21b637d-5d1b-46c7-9f46-43bea47f5e46/pcg-ocs-overdue-and-security?orgId=1&var-reg=VN" target="_blank">Xem Dashboard</a>
+                    <img src="MEETING/ocs_overdue_report.png" alt="OCS Overdue Report" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                </li>
+                <li>
+                    <p>Máy tính chưa cài đặt OCS</p>
+                    <a href="https://twit-dashboard.pouchen.com/d/ef05e9de-c5bd-49e6-822e-8dd82a9c571d/computers-without-ocs-agent-deployed?orgId=1" target="_blank">Xem Dashboard</a>
+                    <img src="MEETING/OCS_Uninstall.png" alt="OCS Uninstall Report" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                </li>
+                <li>
+                    <p>Máy chưa cài đặt chương trình diệt Virus</p>
+                    <a href="https://twit-dashboard.pouchen.com/d/Figg0m74k/vn-antivirus-report?orgId=1&var-tag=VN-PYV" target="_blank">Xem Dashboard</a>
+                    <img src="MEETING/Antivirus.png" alt="Antivirus Report" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                </li>
+            </ul>
+
+            <h3>II. Chuyên án nâng cấp phiên bản Fsecure mới</h3>
+            <p>Để theo dõi những máy chưa nâng cấp, vui lòng truy cập bảng tính sau:</p>
+            <a href="https://docs.google.com/spreadsheets/d/1YVI66QdV0j-6ojRVwOvdTdBEfYnPNc4J8R2I7pXIwXM/edit?gid=0#gid=0" target="_blank">
+                <img src="MEETING/Fsecure.png" alt="Fsecure Upgrade Progress" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            </a>
+
+            <h3>III. Kiểm tra cấu hình VNC những máy Domain Taiwan</h3>
+            <p>Để xem danh sách các máy cần kiểm tra cấu hình VNC, vui lòng truy cập bảng tính sau:</p>
+            <a href="https://docs.google.com/spreadsheets/d/1F3FBlHtdseKQtTYmTno7Laxrn-uwe-7PZBfd6j1Z-b8/edit?gid=0#gid=0" target="_blank">
+                <img src="MEETING/VNC.png" alt="VNC Configuration Check" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+            </a>
+        </section>
+
+        <section id="work-progress-win11">
+            <h2>IV. Chuyên án Upgrade Window 10 to Window 11</h2>
+            <p>Dưới đây là bảng thống kê máy tính nâng cấp hệ điều hành từ Windows 10 lên Windows 11:</p>
+            <img src="MEETING/PLAN10-11.png" alt="Windows 10 to 11 Upgrade Plan" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        </section>
+
+        <section id="work-progress-hub-cleaning">
+            <h2>V. Vệ sinh tủ Hub</h2>
+            <img src="MEETING/hub.png" alt="Hub Cleaning" style="max-width: 100%; height: auto; margin-top: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        </section>
+
+        <section id="ase-report">
+            <h2>VI. Thống kê đơn ASE sửa chữa Operator 2 & báo giờ công</h2>
+              <p>Dưới đây là bảng thống kê giờ công của các thành viên.</p>
+            <div class="work-hours-report">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Người thực hiện</th>
+                            <th>Ngày</th>
+                            <th>Admin activiti</th>
+                            <th>ITSM</th>
+                            <th>Leave</th>
+                            <th>Major Project</th>
+                            <th>Optimization</th>
+                            <th>Others</th>
+                            <th>Training</th>
+                            <th>Tổng giờ công</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">EDP.HUNGTHAI</td>
+                            <td>2025/05/02</td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td>Đủ</td>
+                        </tr>
+                        <tr>
+                            <td>2025/06/17</td>
+                            <td></td>
+                            <td></td>
+                            <td>8.1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>8.1</td>
+                            <td>Dư</td>
+                        </tr>
+                        <tr>
+                            <td>2025/07/14</td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td>8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>16</td>
+                            <td>Dư</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">EDP.KHON</td>
+                            <td>2025/05/02</td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td>Đủ</td>
+                        </tr>
+                        <tr>
+                            <td>2025/10/21</td>
+                            <td></td>
+                            <td></td>
+                            <td>5.5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>5.5</td>
+                            <td>Thiếu</td>
+                        </tr>
+                        <tr>
+                            <td>2025/10/22</td>
+                            <td></td>
+                            <td></td>
+                            <td>1.5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1.5</td>
+                            <td>Thiếu</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">EDP.THENGOC</td>
+                            <td>2025/05/02</td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td>Đủ</td>
+                        </tr>
+                        <tr>
+                            <td>2025/06/06</td>
+                            <td></td>
+                            <td></td>
+                            <td>4.5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>4.5</td>
+                            <td>Thiếu</td>
+                        </tr>
+                        <tr>
+                            <td>2025/06/07</td>
+                            <td>1</td>
+                            <td></td>
+                            <td>17</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>1</td>
+                            <td>19</td>
+                            <td>Dư</td>
+                        </tr>
+                        <tr>
+                            <td>2025/06/12</td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>8</td>
+                            <td>Đủ</td>
+                        </tr>
+                        <tr>
+                            <td>2025/06/13</td>
+                            <td></td>
+                            <td></td>
+                            <td>7.5</td>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>8.5</td>
+                            <td>Dư</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="annual-leave-statistics">
+            <h2>VII. Thống Kê Phép Năm</h2>
+            <p>Tổng quan về tình hình sử dụng phép năm của các thành viên trong nhóm.</p>
+            <div style="width: 80%; margin: auto;">
+                <canvas id="annualLeaveChart"></canvas>
+            </div>
+            <script>
+                const leaveData = [
+                    { name: 'Đặng Ngọc Duy', leave: 1.5 },
+                    { name: 'Ngô Trương Thế Ngọc', leave: 9 },
+                    { name: 'Trịnh Cẩm Khôn', leave: 20.5 },
+                    { name: 'Đinh Thanh Thế', leave: 30 },
+                    { name: 'Trương Khánh Hảo', leave: 58.5 },
+                    { name: 'Đặng Chí Hải', leave: 61.5 },
+                    { name: 'Nguyễn Quốc Huy', leave: 65.5 }
+                ];
+
+                // Sắp xếp dữ liệu theo số ngày phép tăng dần
+                leaveData.sort((a, b) => a.leave - b.leave);
+
+                const labels = leaveData.map(item => item.name);
+                const data = leaveData.map(item => item.leave);
+
+                const ctx = document.getElementById('annualLeaveChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Số giờ còn lại',
+                            data: data,
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.6)',
+                                'rgba(54, 162, 235, 0.6)',
+                                'rgba(255, 206, 86, 0.6)',
+                                'rgba(75, 192, 192, 0.6)',
+                                'rgba(153, 102, 255, 0.6)',
+                                'rgba(255, 159, 64, 0.6)',
+                                'rgba(199, 199, 199, 0.6)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)',
+                                'rgba(199, 199, 199, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Thống kê ngày phép năm còn lại của thành viên'
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Số giờ'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Thành viên'
+                                }
+                            }
+                        }
+                    }
+                });
+            </script>
+        </section>
+
+        <section id="annual-work-hours">
+            <h2>VIII. Báo cáo giờ công năm 2025</h2>
+            <h3>Các hạng mục chính trong báo cáo giờ công:</h3>
+            <ol>
+                <li><strong>Other:</strong> Ngoài việc xử lý công việc hàng ngày của Infra, những việc còn lại thuộc về các hạng mục khác (như kiểm kê, báo phế máy tính, v.v.).</li>
+                <li><strong>Optimization:</strong> Thực hiện tối ưu hóa hệ thống máy chủ, thiết bị mạng và giám sát bằng Grafana nhằm cung cấp cơ sở dữ liệu đáng tin cậy để tiến hành các biện pháp xử lý phù hợp.</li>
+                <li><strong>Training</strong></li>
+                <li><strong>Major Project:</strong> Các chuyên án lớn (Major Projects) do tập đoàn thực thi, bao gồm các cuộc họp trong hệ thống SDCA Network OA System, cùng với các chuyên án nhỏ được triển khai tại từng khu vực nội bộ nhằm đáp ứng yêu cầu cụ thể của khách hàng.</li>
+                <li><strong>ITSM:</strong> Hỗ trợ user xử lý máy vi tính thông qua email, Zalo, Line, Tel...</li>
+                <li><strong>Leave</strong></li>
+                <li><strong>Admin activities:</strong>
+                    <ol type="a">
+                        <li>Các vấn đề hành chính hằng ngày thuộc quyền và trách nhiệm doanh nghiệp.
+                            <ol type="i">
+                                <li>Công việc hành chính/ nhân sự hằng ngày, công việc phi chuyên án hoặc ITSM, bao gồm các công việc hành chính linh tinh, phỏng vấn/đàm phán, điều phối hành chính và liên lạc, v.v.</li>
+                                <li>Họp (vui lòng cho biết tên cuộc họp): họp trong ngày, họp hàng tuần, họp hàng tháng đối với các chuyên án không cụ thể hoặc thảo luận công việc đột xuất.</li>
+                                <li>Biên soạn dữ liệu (vui lòng liệt kê tính chất của dữ liệu): Các bản báo cáo cần thiết cho các cuộc họp trong ngày làm việc, các cuộc họp hàng tuần, các cuộc họp hàng tháng hoặc các cuộc thảo luận công việc đột xuất cho các dự án không cụ thể.</li>
+                            </ol>
+                        </li>
+                        <li>Thời gian đi lại của chuyến công tác.</li>
+                        <li>Hoạt động đội nhóm: Bao gồm sự gắn kết nhóm (sự gắn kết, ví dụ Q12), xây dựng nhóm (tham gia các hoạt động Team Building nhóm).</li>
+                    </ol>
+                </li>
+            </ol>
+            <!-- Nội dung báo cáo giờ công sẽ được thêm vào đây -->
+        </section>
+
+        <section id="server-room-audit">
+            <h2>IX. Audit Server Room T3</h2>
+            <p>Định kỳ hàng tháng từ ngày 15 đến ngày 16, nhóm sẽ tiến hành kiểm tra nội bộ phòng máy chủ PYV T3 (Người thực hiện: Duy).</p>
+            <p>Liên kết đánh giá: <a href="https://forms.gle/iF524mH6e3urj3NeA" target="_blank">Form Đánh Giá Audit Server Room T3</a></p>
+        </section>
+
+        <section id="monthly-attendance-statistics">
+            <h2>X. Thống kê hằng tháng từ ngày 17 đến ngày 16 tháng sau việc chuyên cần của nhóm Operation 2</h2>
+            <p>Vui lòng cung cấp dữ liệu chi tiết về thống kê chuyên cần hàng tháng để tôi có thể trình bày một cách sinh động.</p>
+            <!-- Nội dung thống kê chuyên cần sẽ được thêm vào đây -->
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Báo Cáo AI. Mọi quyền được bảo lưu.</p>
+        </footer>
+    </div>
+</body>
+</html>

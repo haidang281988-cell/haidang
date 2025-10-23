@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Web Cơ Bản</title>
+    <!-- Liên kết với file CSS để tạo kiểu cho trang web -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Phần tiêu đề của trang web -->
+    <header>
+        <div class="banner">
+            <!-- Placeholder cho banner chính với hình ảnh nhóm -->
+            <img src="banner1.jpg" alt="Banner chính">
+        </div>
+        <div class="login-area">
+            <!-- Nút đăng nhập tài khoản thành viên -->
+            <button id="loginButton">Đăng nhập</button>
+            <div id="loggedInUser" style="display: none;">
+                Chào mừng, <span id="userNameDisplay"></span>!
+                <button id="logoutButton">Đăng xuất</button>
+            </div>
+            <div id="loginModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Đăng nhập</h2>
+                    <form id="loginForm">
+                        <label for="username">Tên người dùng:</label>
+                        <input type="text" id="username" name="username" required>
+                        <label for="password">Mật khẩu:</label>
+                        <input type="password" id="password" name="password" required>
+                        <button type="submit">Đăng nhập</button>
+                        <p id="loginError" style="color: red; display: none; margin-top: 10px;">Tên người dùng hoặc mật khẩu không đúng.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Phần nội dung chính của trang web -->
+    <main class="main-container">
+        <aside class="left-sidebar">
+            <h2>Chuyên án & Kiến thức</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Chuyên án nhóm <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://docs.google.com/spreadsheets/d/1QHqQVPmXNPL4Cp9sspdxjen3SBJdeRQ1FGR-iGvScm0/edit?gid=0#gid=0" target="_blank">Vệ sinh tủ hub</a></li>
+                            <li><a href="https://docs.google.com/spreadsheets/d/1YVI66QdV0j-6ojRVwOvdTdBEfYnPNc4J8R2I7pXIwXM/edit?gid=0#gid=0" target="_blank">Cập nhật Fsecure phiên bản mới</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Chia sẻ kiến thức <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-content-type="file" data-file-path="Chia se kien thuc/outlook change o365 SOP.pdf">Outlook Change O365 SOP</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="Chia se kien thuc/The security log is full.pdf">The security log is full</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Sơ đồ mạng các khu <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPA.pdf">Khu A</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPB.pdf">Khu B</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPC.pdf">Khu C</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPD.pdf">Khu D</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPK.pdf">Khu K</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPMJ.pdf">Khu MJ</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/MAPY.pdf">Khu Y Tế</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/YTE-CD-RMCC.pdf">Y Tế-Công Đoàn-RMCC</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-content-type="text" data-content="
+                                <div class='flow-chart-content'>
+                                    <h3>Quy trình xử lý đơn xin trong nội bộ công ty</h3>
+                                    <p>Đây là quy trình tổng quan để xử lý các đơn xin trong nội bộ công ty. Mỗi loại đơn có thể có các bước chi tiết và người phê duyệt cụ thể khác nhau.</p>
+                                    <div class='flow-step'>
+                                        <h4>Bước 1: Người mở đơn</h4>
+                                        <p>Người yêu cầu điền đầy đủ thông tin vào mẫu đơn tương ứng và gửi đi.</p>
+                                    </div>
+                                    <div class='flow-arrow'>&#8595;</div>
+                                    <div class='flow-step'>
+                                        <h4>Bước 2: Chủ quản bộ phận</h4>
+                                        <p>Chủ quản bộ phận xem xét, kiểm tra thông tin và phê duyệt sơ bộ.</p>
+                                    </div>
+                                    <div class='flow-arrow'>&#8595;</div>
+                                    <div class='flow-step'>
+                                        <h4>Bước 3: Bộ phận An toàn sản phẩm (nếu có)</h4>
+                                        <p>Nếu đơn liên quan đến an toàn sản phẩm, bộ phận này sẽ kiểm tra và phê duyệt.</p>
+                                    </div>
+                                    <div class='flow-arrow'>&#8595;</div>
+                                    <div class='flow-step'>
+                                        <h4>Bước 4: BU IT / AC Infra IT</h4>
+                                        <p>Bộ phận IT xem xét yêu cầu kỹ thuật và thực hiện các cấu hình cần thiết.</p>
+                                    </div>
+                                    <div class='flow-arrow'>&#8595;</div>
+                                    <div class='flow-step'>
+                                        <h4>Bước 5: Chủ quản xưởng / OM / Chủ quản Trung tâm hành chính</h4>
+                                        <p>Cấp quản lý cao hơn phê duyệt cuối cùng dựa trên các đánh giá từ các bộ phận liên quan.</p>
+                                    </div>
+                                    <div class='flow-arrow'>&#8595;</div>
+                                    <div class='flow-step'>
+                                        <h4>Bước 6: Hoàn tất</h4>
+                                        <p>Đơn được xử lý và thông báo kết quả cho người yêu cầu.</p>
+                                    </div>
+                                    <p class='note'><i>Lưu ý: Quy trình có thể thay đổi tùy theo loại đơn và quy định của từng BU.</i></p>
+                                </div>
+                            ">Lưu trình đơn xin <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Cài đặt Phần mềm IM Miễn phí</h3><p>(Line/ Wechat/ Zalo/ Teams)</p><h3>* Lưu trình ký duyệt</h3><p>Người mở đơn &rarr; Chủ quản bộ phận</p><p>(Nếu nhà máy có bộ phận an toàn sản phẩm, ký đến bộ phận an toàn sản phẩm)</p><p><a href='CHUYEN AN/PCG-0413-ISMS-T01.odt' download>Tải form PCG-0413-ISMS-T01</a></p>">Cài đặt Phần mềm IM Miễn phí</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3><strong>* Dịch vụ Tài khoản Teams</strong></h3><p>(Hủy ủy quyền Teams & Chuyển nhượng ủy quyền Teams nhàn rỗi)</p><h3><strong>* Lưu trình ký duyệt</strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN／PCM–PCAG／PCM–PCMS／GSCM<br>Đơn vị yêu cầu → Chủ quản BU đảm trách</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính</li></ul><p><a href='CHUYEN AN/PCG-0403-ISMS-T03.odt' download>Tải form PCG-0403-ISMS-T03</a></p>">Dịch vụ Tài khoản Teams</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Dịch vụ Tài khoản Mail</h3><p>(Thêm/Sửa/Xóa/Gửi ngoài/Tham gia MailGroup)</p><h3><strong>* Lưu trình ký duyệt</strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCAG<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCMS<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>GSCM<br>Đơn vị yêu cầu → Chủ quản xưởng/ OM → AC Infra IT</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính → AC Infra IT</li></ul><p><a href='CHUYEN AN/PCG-0413-ISMS-T01.odt' download>Tải form PCG-0413-ISMS-T01</a></p>">Dịch vụ Tài khoản Mail</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Lưu trình ký duyệt<h3></strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCAG<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCMS<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>GSCM<br>Đơn vị yêu cầu → Chủ quản xưởng/ OM → AC Infra IT</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính → AC Infra IT</li></ul><p><a href='CHUYEN AN/PCG-0413-ISMS-T01.odt' download>Tải form PCG-0413-ISMS-T01</a></p>">Đơn xin Quyền sử dụng USB</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Đơn xin Dịch vụ Mạng</h3><p>(Internet/ Google Translate/ 客戶連線 GUEST/ IoT設備連線)<h3><strong>* Lưu trình ký duyệt</strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCAG<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCMS<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>GSCM<br>Đơn vị yêu cầu → Chủ quản xưởng/ OM → AC Infra IT</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính → AC Infra IT</li></ul><p><a href='CHUYEN AN/PCG-0413-ISMS-T01.odt' download>Tải form PCG-0413-ISMS-T01</a></p>">Đơn xin Dịch vụ Mạng</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Lưu trình ký duyệt không có form</strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCAG<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCMS<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>GSCM<br>Đơn vị yêu cầu → Chủ quản xưởng/ OM → AC Infra IT</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính → AC Infra IT</li></ul><p><a href='CHUYEN AN/PCG-0413-ISMS-T01.odt' download>Tải form PCG-0413-ISMS-T01</a></p>">Miễn trừ Trình bảo vệ Màn hình</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Chuyển nhượng Bản quyền Phần mềm <h3><p>(Microsoft Office/ Rhino/ AutoCAD/ Adobe Illustrator…)</p><h3>* Lưu trình ký duyệt</strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCAG<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCMS<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>GSCM<br>Đơn vị yêu cầu → Chủ quản xưởng/ OM → AC Infra IT</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính → AC Infra IT</li></ul><p><a href='CHUYEN AN/SoftwareLicenseTransferApplicationForm.odt' download>Tải form SoftwareLicenseTransferApplicationForm</a></p>">Chuyển nhượng Bản quyền Phần mềm</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3>* Đơn xin Quyền Admin</h3><h3><strong>* Lưu trình ký duyệt</strong></h3><p>(Theo lưu trình bên dưới, lưu trình ký duyệt do BU quyết định)</p><ul><li>PCN<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCAG<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>PCM–PCMS<br>Đơn vị yêu cầu → An toàn sản phẩm → BU IT → Chủ quản xưởng/ OM → AC Infra IT</li><li>GSCM<br>Đơn vị yêu cầu → Chủ quản xưởng/ OM → AC Infra IT</li><li>AC<br>Đơn vị yêu cầu → Chủ quản Trung tâm hành chính → AC Infra IT</li></ul><p><a href='CHUYEN AN/PC Permission Application Form.odt' download>Tải form PC Permission Application Form</a></p><p><a href='CHUYEN AN/Don cam ket mo quyen han may tinh.odt' download>Tải form Don cam ket mo quyen han may tinh</a></p>">Đơn xin Quyền Admin</a></li>
+                            <li><a href="#" data-content-type="text" data-content="<h3><strong>* Lưu trình ký duyệt</strong></h3><p>Đơn vị yêu cầu → Chủ quản OM nhà máy/Trung tâm hành chính → Chủ quản Infra tập đoàn (林君諺 CY.LIN)</p><p><a href='CHUYEN AN/PCG-0414-ISMS-T01SSLVPNV1.9.odt' download>Tải form SSL_VPN_Account_Application_Form</a></p>">Đơn xin Tài khoản SSL VPN</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="https://twit-dashboard.pouchen.com/login" target="_blank">Dashboards Grafana</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">List Of Freeware <span class="arrow">&#9660;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/List of Freeware.pdf">List of Freeware</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/Freeware IoT.pdf">Freeware IoT</a></li>
+                            <li><a href="#" data-content-type="file" data-file-path="CHUYEN AN/Prohibited Freeware.pdf">Prohibited Freeware</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-banner">
+                <img src="banner2.jpg" alt="Banner phụ">
+            </div>
+        </aside>
+
+        <section class="main-center">
+            <h2 class="welcome-message">CHÀO MỪNG BẠN ĐẾN VỚI TRANG THÔNG TIN NỘI BỘ</h2>
+            <div id="content-display">
+                <p>Chào mừng bạn đến với trang thông tin nội bộ. Vui lòng chọn một mục từ thanh bên trái để xem chi tiết.</p>
+                <p>Các thông báo chung sẽ được hiển thị tại đây.</p>
+            </div>
+           
+        </section>
+
+        <aside class="right-sidebar">
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="Tìm kiếm nội dung...">
+                <button id="searchButton">Tìm kiếm</button>
+            </div>
+            <div class="group-notifications">
+                <h3>Thông báo nhóm</h3>
+                <ul>
+                    <li><a href="report.html" target="_blank">Meeting</a></li>
+                    <li>Cập nhật thông báo mới.</li>
+                    <li>Thông báo</li>
+                </ul>
+            </div>
+            <div class="calendar-area">
+                <h3>Lịch</h3>
+                <div id="calendar"></div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Phần chân trang của trang web -->
+    <footer>
+        <p>&copy; 2025 Trang Web Nội Bộ. Thông tin liên hệ: example@company.com</p>
+    </footer>
+
+    <script>
+        // JavaScript cho chức năng modal đăng nhập
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("loginButton");
+        var span = document.getElementsByClassName("close-button")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // JavaScript để xử lý chức năng modal đăng nhập
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("loginButton");
+        var span = document.getElementsByClassName("close-button")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // JavaScript để xử lý menu xổ xuống
+        document.querySelectorAll('.dropdown-toggle').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const dropdownMenu = item.nextElementSibling;
+                dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+                item.querySelector('.arrow').classList.toggle('rotate');
+
+                // Hiển thị nội dung nếu data-content-type và data-content có trên dropdown-toggle
+                const contentType = item.dataset.contentType;
+                const content = item.dataset.content;
+                const contentDisplay = document.getElementById('content-display');
+
+                if (contentType === 'text' && content) {
+                    // Loại bỏ ký tự mũi tên khỏi tiêu đề
+                    const titleText = item.textContent.replace(/\s[\u25B2\u25BC]/, '');
+                    contentDisplay.innerHTML = `<h2>${titleText}</h2>${content}`;
+                }
+            });
+        });
+
+        // JavaScript để xử lý hiển thị nội dung từ sidebar
+        document.querySelectorAll('.left-sidebar a').forEach(item => {
+            item.addEventListener('click', event => {
+                // Chỉ xử lý các liên kết không phải là dropdown-toggle và không có target="_blank"
+                if (!item.classList.contains('dropdown-toggle') && item.target !== '_blank') {
+                    event.preventDefault();
+                    const contentType = item.dataset.contentType;
+                    const contentDisplay = document.getElementById('content-display');
+
+                    if (contentType === 'text') {
+                        contentDisplay.innerHTML = `<h2>${item.textContent}</h2><p>${item.dataset.content}</p>`;
+                    } else if (contentType === 'file') {
+                        const filePath = item.dataset.filePath;
+                        const fileName = filePath.split('/').pop();
+                        const fileExtension = fileName.split('.').pop().toLowerCase();
+
+                        let embedHtml = '';
+                        if (contentType === 'google-doc' || contentType === 'google-sheet') {
+                            embedHtml = `<iframe src="${filePath}" style="width:100%; height:600px;" frameborder="0"></iframe>`;
+                        } else if (fileExtension === 'pdf') {
+                            embedHtml = `<embed src="${filePath}" type="application/pdf" width="100%" height="600px" />`;
+                        } else if (['doc', 'docx', 'odt'].includes(fileExtension)) {
+                            embedHtml = `<iframe src="https://docs.google.com/gview?url=${window.location.origin}/${filePath}&embedded=true" style="width:100%; height:600px;" frameborder="0"></iframe>`;
+                        } else if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
+                            embedHtml = `<img src="${filePath}" alt="${fileName}" style="max-width: 100%; height: auto;">`;
+                        } else if (['xls', 'xlsx'].includes(fileExtension)) {
+                            embedHtml = `<iframe src="https://docs.google.com/gview?url=${window.location.origin}/${filePath}&embedded=true" style="width:100%; height:600px;" frameborder="0"></iframe>`;
+                        } else {
+                            embedHtml = `<p>Không thể hiển thị trực tiếp loại file này. Vui lòng tải xuống.</p>`;
+                        }
+
+                        contentDisplay.innerHTML = `
+                            <h2>${item.textContent}</h2>
+                            <div class="file-viewer">
+                                ${embedHtml}
+                                <p><a href="${filePath}" download="${fileName}">Tải xuống ${fileName}</a></p>
+                            </div>
+                        `;
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarEl = document.getElementById('calendar');
+            let currentMonth = new Date().getMonth();
+            let currentYear = new Date().getFullYear();
+
+            function renderCalendar(month, year) {
+                const firstDay = new Date(year, month, 1);
+                const lastDay = new Date(year, month + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                const startDayIndex = firstDay.getDay(); // 0 for Sunday, 1 for Monday, etc.
+
+                const monthNames = [
+                    "Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6",
+                    "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"
+                ];
+                const dayNames = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
+
+                let calendarHTML = `
+                    <header>
+                        <button id="prevMonth">&laquo;</button>
+                        <h2 id="currentMonthYear">${monthNames[month]} ${year}</h2>
+                        <button id="nextMonth">&raquo;</button>
+                    </header>
+                    <div class="days-of-week">
+                        ${dayNames.map(day => `<div class="day-name">${day}</div>`).join('')}
+                    </div>
+                    <div class="calendar-grid">
+                `;
+
+                // Empty days before the first day of the month
+                for (let i = 0; i < startDayIndex; i++) {
+                    calendarHTML += `<div class="calendar-day empty"></div>`;
+                }
+
+                // Days of the month
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const today = new Date();
+                    const isCurrentDay = day === today.getDate() && month === today.getMonth() && year === today.getFullYear();
+                    calendarHTML += `<div class="calendar-day ${isCurrentDay ? 'current-day' : ''}">${day}</div>`;
+                }
+
+                calendarHTML += `</div>`;
+                calendarEl.innerHTML = calendarHTML;
+
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    currentMonth--;
+                    if (currentMonth < 0) {
+                        currentMonth = 11;
+                        currentYear--;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                });
+
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    currentMonth++;
+                    if (currentMonth > 11) {
+                        currentMonth = 0;
+                        currentYear++;
+                    }
+                    renderCalendar(currentMonth, currentYear);
+                });
+            }
+
+            renderCalendar(currentMonth, currentYear);
+
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const contentDisplay = document.getElementById('content-display');
+            const allMenuItems = document.querySelectorAll('.left-sidebar li a');
+
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            function performSearch() {
+                const query = searchInput.value.toLowerCase();
+                let foundMatch = false;
+
+                allMenuItems.forEach(item => {
+                    const itemText = item.textContent.toLowerCase();
+                    const itemContent = item.dataset.content ? item.dataset.content.toLowerCase() : '';
+                    const parentLi = item.closest('li');
+                    const parentDropdownMenu = item.closest('.dropdown-menu');
+
+                    if (itemText.includes(query) || itemContent.includes(query)) {
+                        if (parentLi) {
+                            parentLi.style.display = 'block'; // Show the list item
+                        }
+                        if (parentDropdownMenu) {
+                            parentDropdownMenu.style.display = 'block'; // Show the dropdown menu
+                            const parentDropdownToggle = parentDropdownMenu.previousElementSibling;
+                            if (parentDropdownToggle && parentDropdownToggle.classList.contains('dropdown-toggle')) {
+                                parentDropdownToggle.closest('li').style.display = 'block'; // Show the parent dropdown toggle
+                            }
+                        }
+                        
+                        // If it's a direct link or a dropdown item, display its content
+                        if (!item.classList.contains('dropdown-toggle')) {
+                            // Simulate a click to display content
+                            item.click();
+                            foundMatch = true;
+                        }
+                    } else {
+                        if (parentLi) {
+                            parentLi.style.display = 'none'; // Hide non-matching items
+                        }
+                    }
+                });
+
+                // After filtering, re-evaluate dropdown parents
+                document.querySelectorAll('.left-sidebar > nav > ul > li.dropdown').forEach(dropdownLi => {
+                    const dropdownMenu = dropdownLi.querySelector('.dropdown-menu');
+                    if (dropdownMenu) {
+                        const visibleChildren = Array.from(dropdownMenu.children).some(child => child.style.display !== 'none');
+                        if (visibleChildren) {
+                            dropdownLi.style.display = 'block';
+                        } else {
+                            dropdownLi.style.display = 'none';
+                        }
+                    }
+                });
+
+                if (!foundMatch && query !== '') {
+                    contentDisplay.innerHTML = `<h2>Không tìm thấy kết quả</h2><p>Không có mục nào phù hợp với từ khóa "${query}".</p>`;
+                } else if (query === '') {
+                    // If search input is empty, show all items and default content
+                    allMenuItems.forEach(item => {
+                        const parentLi = item.closest('li');
+                        if (parentLi) {
+                            parentLi.style.display = 'block';
+                        }
+                    });
+                    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                        menu.style.display = 'none'; // Hide dropdowns by default
+                    });
+                    contentDisplay.innerHTML = `<p>Chào mừng bạn đến với trang thông tin nội bộ. Vui lòng chọn một mục từ thanh bên trái để xem chi tiết.</p><p>Các thông báo chung sẽ được hiển thị tại đây.</p>`;
+                }
+            }
+
+            // Login functionality
+            const loginForm = document.getElementById('loginForm');
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const loginError = document.getElementById('loginError');
+            const loggedInUserDiv = document.getElementById('loggedInUser');
+            const userNameDisplay = document.getElementById('userNameDisplay');
+            const logoutButton = document.getElementById('logoutButton');
+            const loginButton = document.getElementById('loginButton');
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = usernameInput.value;
+                const password = passwordInput.value;
+
+                if (username === 'edp.hai' && password === 'abc1234*') {
+                    loginModal.style.display = 'none';
+                    loginButton.style.display = 'none';
+                    loggedInUserDiv.style.display = 'block';
+                    userNameDisplay.textContent = 'HaiDang';
+                    loginError.style.display = 'none';
+                    // Clear password field after successful login
+                    passwordInput.value = '';
+                } else {
+                    loginError.style.display = 'block';
+                }
+            });
+
+            logoutButton.addEventListener('click', () => {
+                loggedInUserDiv.style.display = 'none';
+                loginButton.style.display = 'block';
+                usernameInput.value = ''; // Clear username field on logout
+                passwordInput.value = ''; // Clear password field on logout
+                loginError.style.display = 'none'; // Hide error message on logout
+            });
+        });
+    </script>
+</body>
+</html>
